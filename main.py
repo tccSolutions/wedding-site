@@ -1,22 +1,23 @@
+import os
 from flask import Flask, url_for, render_template, request, redirect
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired
-
+import psycopg2
 from data.image_data import photos
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data/rsvps.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'dmobley0608@gmail.com'
-app.config['MAIL_PASSWORD'] = 'cevrxndqcnatwtgk'
+app.config['MAIL_USERNAME'] = os.environ.get("EMAIL")
+app.config['MAIL_PASSWORD'] = os.environ.get("PASSWORD")
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.secret_key = "Lawd Have Mercy"
+app.secret_key = os.environ.get("SECRET_KEY")
 db = SQLAlchemy(app)
 pictures = photos
 
