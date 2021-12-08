@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/styles.css"/>
+    <link rel="icon"  type="image/x-icon" href="../static/images/img.png"/>
+    <title>Photos</title>
+</head>
+<body>
+
+ <nav>
+     <a href="{{url_for('index')}}}">Home</a>
+      <a href="{{url_for('photos')}}">Photos</a>
+      <a>Registry</a>
+      <a href="{{url_for('contact')}}">Reach Out</a>
+     <div class="registry">
+       <a  href="https://www.amazon.com/hz/wishlist/ls/1IUH8FY351NRZ?ref_=wl_share">Amazon Registry</a>
+       <a href="https://www.walmart.com/registry/WR/3c528b4e-c382-4f62-a463-25d954380bea">Walmart Registry</a>
+      </div>
+      <a href="{{url_for('rsvp')}}">RSVP</a>
+    </nav>
+</body>
+</html>

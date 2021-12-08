@@ -8,13 +8,7 @@
     <title>Contact Us</title>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-      <a href="/photos">Photos</a>
-      <a href="/rsvp">RSVP</a>
-      <a>Registry</a>
-    </nav>
-
+   {% include 'navbar.html' %}
 
             <form class='contact-form' action="{{ url_for('send') }}" method="POST">
                 <h1>Leave Us A Message</h1>
