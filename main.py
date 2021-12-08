@@ -39,7 +39,7 @@ db.create_all()
 guests = db.session.query(RSVP).all()
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
     return render_template('index.html')
 
