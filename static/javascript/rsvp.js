@@ -1,4 +1,4 @@
-document.body.style.backgroundImage = "url(../static/images/us.png)";
+document.body.style.backgroundImage = "url(../static/images/us.jpg)";
 document.body.style.backgroundRepeat= "no-repeat"
 document.body.style.backgroundSize= "cover";
 document.body.style.backgroundPosition = "center"
