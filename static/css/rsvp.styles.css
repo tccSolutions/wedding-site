@@ -1,0 +1,138 @@
+.rsvp_container_form{
+    display: none;
+    position:fixed;
+    margin-right: auto;
+    top:8.5%;
+    right:0;
+}
+#rsvp_exit_btn{
+    width:30px;
+    position:relative;
+    margin-left: auto;
+}
+.rsvp_container_form_click{
+     display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background: rgba(0, 0, 0, .85);
+    padding:1.5em;
+    z-index: 3;
+}
+.rsvp_container_form h1{
+    color: #9d9b9b;
+    font-size: 1em;
+}
+.rsvp_container_form input{
+    margin-bottom: .5em;
+    width:75%;
+    height: 2em;
+    border-radius: .25em;
+    background: rgba(136, 136, 136, 0.28);
+    color:white;
+    font-size: 1em;
+}
+.rsvp_container input::placeholder {
+    color: #fafafa;
+    font-size: 1em;
+}
+
+.rsvp_container{
+    width: 100%;
+    position: sticky;
+    top:5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    overflow: scroll;
+    margin-top: 10.5em;
+    height: 65vh;
+}
+.rsvp_container::-webkit-scrollbar{
+    display: none;
+}
+.rsvp_container_header{
+    width:100%;
+    position: fixed;
+    top:2.5%;
+    z-index: 1;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+     background-color: rgba(157, 155, 155, 0.58);
+
+}
+.rsvp_container_header p{
+    font-size: 1.5em;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    margin-top: -2em;
+}
+
+.rsvp_container_header p a{
+    cursor: pointer;
+    color: white;
+}
+.rsvp_container_header hr{
+    width: 100%;
+    border-top: 3px double #ffffff;;
+    box-shadow: 5px 5px 5px black;
+}
+.rsvp_container_header h1{
+    font-size: 5em;
+    letter-spacing: .75em;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px black;
+    position: sticky;
+    top:8.5%;
+
+}
+
+.rsvp{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 0;
+    width:100%
+}
+.rsvp p{
+    font-size: 3em;
+    color:white;
+    text-shadow: 2px 2px 2px black;
+}
+#rsvp_maker{
+    margin-left: auto;
+    font-size: 2rem;
+    width:20%;
+}
+
+@media only screen and (max-width: 600px){
+    .rsvp_container{
+        margin-top: 8em;
+    }
+    nav a{
+        padding: 0;
+        margin: 0;
+    }
+    #rsvp_maker{
+        position: fixed;
+        bottom:0;
+        left:0;
+        width:100vw;
+        background-color: white;
+    }
+    .rsvp_container_form{
+        width:95%;
+        background: rgba(0, 0, 0, .95);
+    }
+    .rsvp{
+        height: 10%;
+    }
+    .rsvp_container_header{
+        background-color: rgba(157, 155, 155, 0.58);
+    }
+}

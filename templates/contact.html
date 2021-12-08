@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/styles.css" />
+     <link rel="stylesheet" href="../static/css/contact.styles.css" />
+    <link rel="icon"  type="image/x-icon" href="../static/images/img.png"/>
+    <title>Contact Us</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+      <a href="/photos">Photos</a>
+      <a href="/rsvp">RSVP</a>
+      <a>Registry</a>
+    </nav>
+
+
+            <form class='contact-form' action="{{ url_for('send') }}" method="POST">
+                <h1>Leave Us A Message</h1>
+          <input type="text" placeholder="Name" name="name"/>
+          <input type="email" placeholder="Email" name="email"/>
+          <textarea rows=10 cols=30 placeholder="Message" name="message"></textarea>
+          <input type="submit"/>
+      </form>
+
+      <script src="../static/javascript/contact.js"></script>
+
+</body>
+</html>

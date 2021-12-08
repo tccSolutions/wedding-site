@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../static/css/styles.css"/>
+    <link rel="stylesheet" href="../static/css/rsvp.styles.css"/>
+    <link rel="icon" type="image/x-icon" href="../static/images/img.png"/>
+    <title>Blog</title>
+</head>
+<body>
+<nav>
+    <a href="/">Home</a>
+    <a href="/photos">Photos</a>
+    <a>Registry</a>
+    <a href="/contact">Reach Out</a>
+    <a id="rsvp_maker">Click Here to RSVP</a>
+</nav>
+<form class="rsvp_container_form" action="{{ url_for('add') }}" method="POST">
+    <input id="rsvp_exit_btn" type="button" value="X"/>
+    <h1>RSVP</h1>
+
+        {{form.csrf_token}}
+        {{form.name}}
+    {{form.num_guests}}
+    <input type="submit" placeholder="Submit" class="rsvp_submit">
+</form>
+
+
+<div class="rsvp_container_header">
+   <h1 >RSVP LIST</h1>
+    <p>Please use the <a href="{{ url_for('contact') }}">Reach Out</a> link if you need to make changes.</p>
+
+</div>
+
+
+<div class="rsvp_container">
+    {% for guest in rsvps %}
+        <div class="rsvp">
+            <p>{{ guest }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<script src="../static/javascript/rsvp.js"></script>
+
+</body>
+</html>

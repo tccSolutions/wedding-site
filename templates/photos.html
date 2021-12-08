@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="../static/css/styles.css"/>
+     <link rel="stylesheet"  href="../static/css/photos.styles.css"/>
+    <link rel="icon"  type="image/x-icon" href="../static/images/img.png"/>
+    <title>Photos</title>
+</head>
+<div class="photo_overlay">
+    <div class="photo_overlay_photo" >
+        <img src="" alt="not found"/>
+    </div>
+</div>
+<body>
+
+<nav>
+     <a href="/">Home</a>
+      <a href="/rsvp">RSVP</a>
+      <a>Registry</a>
+      <a href="/contact">Reach Out</a>
+
+</nav>
+
+<div class="photo_container" >
+
+    {% for photo in images %}
+        <div class="photo">
+            <img src="{{photo}}"/>
+        </div>
+    {% endfor %}
+
+</div>
+
+<script src="../static/javascript/photos.js"></script>
+
+</body>

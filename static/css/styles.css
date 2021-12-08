@@ -1,0 +1,90 @@
+nav{
+    position: sticky;
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    background-color: darkgrey;
+    width:100vw;
+    height: 3em;
+    top:0;
+    margin-bottom: 2.75em;
+    padding: 1em;
+    border-bottom: 2px solid black;
+    box-shadow: 10px 5px 5px rgb(58, 56, 56);
+    z-index: 2;
+}
+
+nav a {
+  text-align: center;
+    margin-right: 50px;
+    font-size: 1.25em;
+    cursor: pointer;
+    width: 100px;
+    padding: 15px;
+    text-decoration: none;
+    color:black;
+
+}
+nav a:hover{
+    text-decoration:underline;
+    box-shadow: 5px 5px 5px black;
+    border-radius: .05em;
+    transform:translate(.25em);
+    color: rgb(255, 255, 255);
+
+}
+
+body{
+margin:0;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: rgb(243, 205, 161);
+}
+
+.Heading{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registry{
+    visibility: hidden;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    top:80%;
+    left:20%;
+    background-color: darkgrey;
+    border-bottom-left-radius: .25em;
+    border-bottom-right-radius: .75em;
+
+}
+
+.registry:hover{
+    visibility: visible;
+}
+
+nav a:nth-child(3):hover ~ .registry{
+    visibility: visible;
+}
+#countdown{
+    text-shadow: 2px 2px 2px white;
+    font-size: 2em;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    nav a{
+        padding:0;
+        flex-wrap: wrap;
+        margin-right: 5px;
+    }
+
+    #countdown{
+        font-size: 2rem;
+        text-wrap: normal;
+        width:75vw;
+    }
+}
