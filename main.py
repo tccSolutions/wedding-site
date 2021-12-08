@@ -8,7 +8,6 @@ from wtforms.validators import DataRequired
 import psycopg2
 from data.image_data import photos
 
-
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL1")
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -24,7 +23,7 @@ pictures = photos
 
 class RSVP(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100),  nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     num_guests = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
@@ -33,7 +32,8 @@ class RSVP(db.Model):
 
 class RSVPForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()], render_kw={"placeholder": "NAME"})
-    num_guests = IntegerField('num_of_guests', validators=[DataRequired()], render_kw={"placeholder": "NUMBER OF GUESTS"})
+    num_guests = IntegerField('num_of_guests', validators=[DataRequired()],
+                              render_kw={"placeholder": "NUMBER OF GUESTS"})
 
 
 db.create_all()
@@ -89,6 +89,8 @@ def contact():
 
 @app.route("/rsvp")
 def rsvp():
+    global guests
+    guests = db.session.query(RSVP).all()
     form = RSVPForm()
     if form.validate_on_submit():
         return redirect(url_for('rsvp'))
