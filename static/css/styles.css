@@ -48,7 +48,7 @@ background-color: rgb(243, 205, 161);
     flex-direction: column;
     align-items: center;
 }
-#registry{
+.registry{
     visibility:hidden;
     position: fixed;
     display:flex;
@@ -63,7 +63,7 @@ background-color: rgb(243, 205, 161);
     z-index: 2;
 }
 
-#registry a{
+.registry a{
     color: white;
     font-size: 1.5em;
     padding:.25em;
@@ -71,29 +71,60 @@ background-color: rgb(243, 205, 161);
     margin-bottom: 10px;
 }
 
-#registry:hover{
+.registry:hover{
     visibility: visible;
 }
 
-#registry_btn:hover ~ #registry{
+.registry_btn:hover ~ .registry{
     visibility: visible;
 }
 #countdown{
     text-shadow: 2px 2px 2px white;
     font-size: 2em;
 }
+.mobile-nav{
+    display:none;
+}
+.mobile-dropdown{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left:0;
+    top:8.5%;
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
 
+}
+.mobile-dropdown .registry{
+    top:22%;
+    left:27%;
+    width:15em;
+}
+
+.mobile-nav-icon{
+    margin-left: auto;
+    margin-right: 1.5em;
+}
+.mobile-nav-icon:hover{
+    transform: scale(1.25);
+    box-shadow: 5px 5px 5px black;
+    border: 2px solid black
+}
 
 @media only screen and (max-width: 600px) {
-    nav a{
-        padding:0;
-        flex-wrap: wrap;
-        margin-right: 5px;
+    nav {
+        display:none;
+    }
+    .mobile-nav{
+        display: flex;
     }
 
     #countdown{
         font-size: 2rem;
         text-wrap: normal;
         width:75vw;
+        justify-content: center;
+        text-justify: inter-ideograph;
     }
 }

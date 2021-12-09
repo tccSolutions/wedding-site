@@ -7,18 +7,34 @@
     <title>Photos</title>
 </head>
 <body>
-
  <nav>
      <a href="{{url_for('index')}}">Home</a>
       <a href="{{url_for('photos')}}">Photos</a>
-      <a id="registry_btn">Registry</a>
+      <a class="registry_btn">Registry</a>
       <a href="{{url_for('contact')}}">Reach Out</a>
       <a href="{{url_for('rsvp')}}" >RSVP</a>
-     <div id="registry">
+     <div class="registry">
        <a  href="https://www.amazon.com/hz/wishlist/ls/1IUH8FY351NRZ?ref_=wl_share">Amazon Registry</a>
        <a href="https://www.walmart.com/registry/WR/3c528b4e-c382-4f62-a463-25d954380bea">Walmart Registry</a>
       </div>
     </nav>
+ <nav class="mobile-nav">
+     <div class="mobile-nav-icon">
+         <img src="../static/images/img_1.png" width="50px"/>
+     </div>
+     <div class="mobile-dropdown">
+         <a href="{{url_for('index')}}">Home</a>
+      <a href="{{url_for('photos')}}">Photos</a>
+      <a class="registry_btn">Registry</a>
+      <a href="{{url_for('contact')}}">Reach Out</a>
+      <a href="{{url_for('rsvp')}}" >RSVP</a>
+     <div class="registry">
+       <a  href="https://www.amazon.com/hz/wishlist/ls/1IUH8FY351NRZ?ref_=wl_share">Amazon Registry</a>
+       <a href="https://www.walmart.com/registry/WR/3c528b4e-c382-4f62-a463-25d954380bea">Walmart Registry</a>
+      </div>
+     </div>
+
+ </nav>
 
     <script src="../static/javascript/index.js"></script>
 </body>
