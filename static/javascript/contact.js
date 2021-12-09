@@ -1,1 +1,0 @@
-document.body.style.backgroundImage = "url(../static/images/contact.jpg)";

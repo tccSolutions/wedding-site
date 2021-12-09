@@ -2,7 +2,7 @@
 // Set the date we're counting down to
 var countDownDate = new Date("Sept 24, 2022 15:37:25").getTime();
 
-// Update the count down every 1 second
+// Update the count-down every 1 second
 var x = setInterval(function() {
 
   // Get today's date and time
@@ -18,8 +18,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("countdown").innerHTML = "Days Until The Wedding: " + days + " days " + hours + " hours "
-  + minutes + " minues " + seconds + " seconds ";
+  document.getElementById("countdown").innerHTML ="Days Until The Wedding: " + days
 
   // If the count down is finished, write some text
   if (distance < 0) {

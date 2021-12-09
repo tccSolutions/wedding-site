@@ -1,9 +1,10 @@
 .photo_container{
     display:flex;
     flex-wrap: wrap;
-    margin-top: 10em;
-    width:75%;
+    margin-top: 5em;
+    width:100%;
     padding: 1.5em;
+
 }
 .photo{
     display: flex;
@@ -26,7 +27,6 @@
 .photo img:hover{
    cursor: pointer;
    transform: scale(1.25);
-   z-index: 2;
    transition: transform 1s ease-in;
 }
 .photo_overlay{
@@ -54,4 +54,18 @@
     margin-top: 2rem;
     border-radius: 1em;
     box-shadow: 20px 20px 20px black;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        background-size: cover;
+    }
+    .photo_container{
+        justify-content: center;
+        margin-top: 1em;
+        overflow-y: hidden;
+    }
+    .photo{
+        width: 15em;
+    }
 }
