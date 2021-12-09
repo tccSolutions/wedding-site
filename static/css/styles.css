@@ -112,7 +112,7 @@ background-color: rgb(243, 205, 161);
     border: 2px solid black
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     nav {
         display:none;
     }
