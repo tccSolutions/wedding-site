@@ -1,3 +1,6 @@
+body{
+    background-image: url("../images/contact.jpg");
+}
 .contact-form{
     margin-top: 15em;
     padding: 2em;
@@ -30,7 +33,7 @@
 
 @media only screen and (max-width: 600px) {
     body{
-        background-size: cover;
+        background-size: contain;
     }
     .contact-form{
         position: relative;

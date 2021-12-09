@@ -105,9 +105,24 @@
     text-shadow: 2px 2px 2px black;
 }
 #rsvp_maker{
-    margin-left: auto;
     font-size: 2rem;
-    width:20%;
+    z-index: 3;
+    position:fixed;
+    top:15px;
+    right:50px;
+    height: 40px;
+    padding: .25em;
+    border-radius: .5em;
+
+}
+
+#rsvp_maker h4{
+    position: relative;
+    top: -1.25em;
+}
+#rsvp_maker:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.09);
 }
 
 @media only screen and (max-width: 600px){
@@ -120,7 +135,7 @@
     }
     #rsvp_maker{
         position: fixed;
-        bottom:0;
+        top:93%;
         left:0;
         width:100vw;
         background-color: white;

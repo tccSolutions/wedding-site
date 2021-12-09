@@ -16,7 +16,7 @@ app.config['MAIL_USERNAME'] = os.environ.get("EMAIL")
 app.config['MAIL_PASSWORD'] = os.environ.get("PASSWORD")
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.secret_key = os.environ.get("SECRET_KEY")
+app.secret_key = "os.environ.get('SECRET_KEY')"
 db = SQLAlchemy(app)
 pictures = photos
 
