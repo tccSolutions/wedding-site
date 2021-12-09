@@ -1,0 +1,10 @@
+body{
+    background-image: url("../images/background.jpg");
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        background-image: url("../images/index-mobile.png");
+        background-size: cover;
+    }
+}
