@@ -11,13 +11,15 @@
  <nav>
      <a href="{{url_for('index')}}">Home</a>
       <a href="{{url_for('photos')}}">Photos</a>
-      <a class="registry_btn">Registry</a>
+      <a id="registry_btn">Registry</a>
       <a href="{{url_for('contact')}}">Reach Out</a>
       <a href="{{url_for('rsvp')}}" >RSVP</a>
-    </nav>
-     <div class="registry">
+     <div id="registry">
        <a  href="https://www.amazon.com/hz/wishlist/ls/1IUH8FY351NRZ?ref_=wl_share">Amazon Registry</a>
        <a href="https://www.walmart.com/registry/WR/3c528b4e-c382-4f62-a463-25d954380bea">Walmart Registry</a>
       </div>
+    </nav>
+
+    <script src="../static/javascript/index.js"></script>
 </body>
 </html>

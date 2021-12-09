@@ -48,21 +48,22 @@ background-color: rgb(243, 205, 161);
     flex-direction: column;
     align-items: center;
 }
-.registry{
-    visibility: hidden;
+#registry{
+    visibility:hidden;
     position: fixed;
     display:flex;
     width:10%;
     padding: 2em 1em;
     flex-direction: column;
-    top:8.5%;
-    left:20.5%;
+    top:7%;
+    left:20%;
     background-color: rgba(0, 0, 0, 0.62);
     border-bottom-left-radius: .25em;
     border-bottom-right-radius: .75em;
+    z-index: 2;
 }
 
-.registry a{
+#registry a{
     color: white;
     font-size: 1.5em;
     padding:.25em;
@@ -70,18 +71,16 @@ background-color: rgb(243, 205, 161);
     margin-bottom: 10px;
 }
 
-.registry:hover{
+#registry:hover{
     visibility: visible;
 }
 
-
-.registry_btn:hover ~ .registry{
+#registry_btn:hover ~ #registry{
     visibility: visible;
 }
 #countdown{
     text-shadow: 2px 2px 2px white;
     font-size: 2em;
-
 }
 
 
