@@ -1,9 +1,11 @@
 import os
+
+import wtforms
 from flask import Flask, url_for, render_template, request, redirect
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField
+from wtforms import StringField, IntegerField, EmailField, TextAreaField
 from wtforms.validators import DataRequired
 import psycopg2
 from data.image_data import photos
@@ -34,6 +36,12 @@ class RSVPForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()], render_kw={"placeholder": "NAME"})
     num_guests = IntegerField('num_of_guests', validators=[DataRequired()],
                               render_kw={"placeholder": "NUMBER OF GUESTS"})
+
+
+class ContactForm(FlaskForm):
+    name = StringField('name', validators=[DataRequired()], render_kw={"placeholder": "NAME"})
+    email = EmailField('email', validators=[DataRequired()], render_kw={"placeholder": "Email"})
+    message = TextAreaField('message', validators=[DataRequired()], render_kw={"placeholder": "Enter Message"})
 
 
 db.create_all()
@@ -84,7 +92,10 @@ def photos():
 
 @app.route("/contact")
 def contact():
-    return render_template('contact.html')
+    form = ContactForm()
+    if form.validate_on_submit():
+        return redirect('index')
+    return render_template('contact.html', form=form)
 
 
 @app.route("/rsvp")

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/styles.css" />
-     <link rel="stylesheet" href="../static/css/contact.styles.css" />
-    <link rel="icon"  type="image/x-icon" href="../static/images/img.png"/>
-    <title>Contact Us</title>
-</head>
-<body>
-   {% include 'navbar.html' %}
+    <head>
+        <meta charset="UTF-8">
+        <link href="../static/css/styles.css" rel="stylesheet"/>
+        <link href="../static/css/contact.styles.css" rel="stylesheet"/>
+        <link href="../static/images/img.png" rel="icon" type="image/x-icon"/>
+        <title>Contact Us</title>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
 
-            <form class='contact-form' action="{{ url_for('send') }}" method="POST">
-                <h1>Leave Us A Message</h1>
-          <input type="text" placeholder="Name" name="name"/>
-          <input type="email" placeholder="Email" name="email"/>
-          <textarea rows=10 cols=30 placeholder="Message" name="message"></textarea>
-          <input type="submit"/>
-      </form>
+        <form action="{{ url_for('send') }}" class='contact-form' method="POST">
+            <h1>Leave Us A Message</h1>
+                {{form.csrf_token}}
+                {{form.name}}
+                {{form.email}}
+                {{form.message(rows='15')}}
+            <input type="submit"/>
+        </form>
 
-      <script src="../static/javascript/contact.js"></script>
+        <script src="../static/javascript/contact.js"></script>
 
-</body>
+    </body>
 </html>
