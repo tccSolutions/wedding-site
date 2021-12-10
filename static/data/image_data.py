@@ -1,21 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-
-
-# # driver = webdriver.Edge('msedgedriver.exe')
-# # driver.get("https://drive.google.com/drive/u/0/folders/1jcdmWfgHbphsEdQkSrgI9jFOpFt3jij2")
-# # # a = driver.find_elements(By.CSS_SELECTOR, "td a")
-# # # photo_urls = []
-# # # for photo in a:
-# # #     photo_urls.append(photo.get_attribute('href'))
-# # # for photo in photo_urls:
-# # #     driver.get(photo)
-# # #     image = driver.find_elements(By.CSS_SELECTOR, "div img")
-# # #     print(image)
-# # #     with open("photo_url.txt", 'a') as file:
-# # #         file.write(f"'{image[0].get_attribute('src')}',\n")
-# # driver.implicitly_wait(60)
-# driver.quit()
 photos=\
     [
 "https://hosting.photobucket.com/images/i/dmobley0608/DSC02358(3).jpg",

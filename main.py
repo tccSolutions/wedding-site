@@ -1,14 +1,12 @@
 import os
 
-import wtforms
 from flask import Flask, url_for, render_template, request, redirect
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, EmailField, TextAreaField
 from wtforms.validators import DataRequired
-import psycopg2
-from data.image_data import photos
+from static.data.image_data import photos
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL1", "sqlite:///data/rsvps.db")
