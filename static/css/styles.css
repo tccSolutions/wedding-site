@@ -123,10 +123,10 @@ nav a:hover{
     }
 
     #countdown{
-        font-size: 2rem;
-        text-wrap: normal;
+        font-size: 1.5rem;
         width:75vw;
         justify-content: center;
-        text-justify: inter-ideograph;
+        text-shadow: 5px 5px 5px black;
+        margin-top: 5em;
     }
 }

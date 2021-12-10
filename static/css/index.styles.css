@@ -4,7 +4,13 @@ body{
 
 @media only screen and (max-width: 600px){
     body{
-        background-image: url("../images/index-mobile.png");
+        background-image: url("../images/index-mobile.jpg");
         background-size: cover;
+        background-repeat: no-repeat;
     }
+    .Heading{
+        color:white;
+        text-shadow:5px 5px 5px black;
+    }
+
 }
