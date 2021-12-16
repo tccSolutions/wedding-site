@@ -19,21 +19,26 @@
         </div>
     {% endfor %}
 </div>
-<div id="carouselExampleControls" class="photo_overlay fixed-top carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="photo_overlay fixed-top carousel slide" data-interval="false">
+    <div>
+         <button id="photo_exit_btn" class="btn-secondary border border-solid fs-3 float-end mb-2 gray-100">X</button>
+    </div>
+
   <div class="carousel-inner">
        {% for photo in images %}
         <div class="carousel-item">
-            <button id="photo_exit_btn" class="btn-danger fs-3 me-auto gray-100">X</button>
            <img src={{photo}} class="img-thumbnail" alt="...">
         </div>
     {% endfor %}
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <button class="carousel-control-prev "
+         type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <button class="carousel-control-next  my-auto"
+          style="height: 35%" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon"   aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>

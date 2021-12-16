@@ -1,17 +1,24 @@
 //------------------------------Image Handler----------------------------------------------------//
 
-images = document.getElementsByClassName("photo")
-car_items = document.getElementsByClassName("carousel-item")
-console.log(images)
+let images = document.getElementsByClassName("photo")
+let overlay = document.getElementsByClassName("photo_overlay")[0]
+let carItems = document.getElementsByClassName("carousel-item")
+
 Array.from(images).forEach(function(element){
-  element.onclick = function (event){
-    console.log(event.target)
-    overlay = document.getElementsByClassName("photo_overlay")[0]
-    overlay.style.visibility = "visible"
-    car_items[0].classList.add("active")
-    document.getElementById("photo_exit_btn").onclick=function (){
-      overlay.style.visibility = "hidden"
+    element.onclick = function (event){
+      Array.from(carItems).forEach(function(carItem){
+        if (carItem.childNodes[1].src === event.target.childNodes[1].src) {
+          carItem.classList.add('active')
+        }
+      })
+      overlay.style.visibility = "visible"
     }
   }
-})
+)
 
+document.getElementById("photo_exit_btn").onclick=function (){
+      Array.from(carItems).forEach(function(carItem){
+        carItem.classList.remove("active")
+      })
+      overlay.style.visibility = "hidden"
+    }
