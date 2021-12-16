@@ -1,6 +1,4 @@
 gunicorn==20.1.0
-selenium~=4.1.0
-Flask~=2.0.2
 WTForms~=3.0.0
 flask_mail == 0.9.1
 Flask_SQLAlchemy == 2.5.1
@@ -9,3 +7,4 @@ wtforms == 3.0.0
 flask_sqlalchemy == 2.5.1
 wtforms.validators == 1.0.0
 psycopg2 == 2.9.2
+Flask~=2.0.2

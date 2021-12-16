@@ -31,30 +31,17 @@
 }
 .photo_overlay{
     visibility: hidden;
-    position: fixed;
-    top:5%;
-    z-index: 3;
-    width:85vw;
-    height:85vh;
-    border:15px solid rgba(46, 45, 45, 0.76);
-    background-color: rgba(51, 50, 50, 0.788);
-    padding:1em;
-    border-radius: 2em;
+    background-color: rgba(3, 3, 3, 0.65);
+    width:75%;
+    margin: auto;
+    border-radius: .5em;
+    padding: 0 2em 2em 3em;
+    z-index: 4;
 }
 
-.photo_overlay_photo{
-    display:flex;
-    justify-content: center;
-    border-radius: 5em;
-    width: 95%;
-    height: 95%;
-    overflow: hidden;
-}
-.photo_overlay_photo img{
-    margin-top: 2rem;
-    border-radius: 1em;
-    box-shadow: 20px 20px 20px black;
-}
+
+
+
 
 @media only screen and (max-width: 600px){
     body{
