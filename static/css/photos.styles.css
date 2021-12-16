@@ -1,9 +1,14 @@
+body{
+    background-image: none;
+    background-color: antiquewhite;
+}
 .photo_container{
     display:flex;
     flex-wrap: wrap;
     margin-top: 5em;
     width:100%;
     padding: 1.5em;
+    overflow-y: hidden;
 
 }
 .photo{

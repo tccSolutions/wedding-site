@@ -57,7 +57,7 @@
 .rsvp_container_header{
     width:100%;
     position: fixed;
-    top:2.5%;
+    top:8%;
     z-index: 1;
     display:flex;
     flex-direction: column;
@@ -69,7 +69,7 @@
     font-size: 1.5em;
     color: white;
     text-shadow: 1px 1px 1px black;
-    margin-top: -2em;
+
 }
 
 .rsvp_container_header p a{
@@ -103,23 +103,25 @@
     font-size: 3em;
     letter-spacing: .1em;
     color:white;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 5px 5px 10px black;
 }
 #rsvp_maker{
     font-size: 2rem;
-    z-index: 3;
+    z-index: 2;
     position:fixed;
-    top:15px;
+    top:15%;
     right:50px;
     height: 40px;
     padding: .25em;
     border-radius: .5em;
+    color:white;
+    text-shadow: 5px 5px 10px black;
 
 }
 
 #rsvp_maker h4{
     position: relative;
-    top: -1.25em;
+
 }
 #rsvp_maker:hover{
     cursor: pointer;
@@ -135,11 +137,16 @@
         margin: 0;
     }
     #rsvp_maker{
+        text-align: center;
         position: fixed;
         top:93%;
         left:0;
         width:100vw;
         background-color: white;
+        color: black;
+    }
+    #rsvp_maker:hover{
+        background-color: #9d9b9b;
     }
     .rsvp_container_form{
         width:95%;
