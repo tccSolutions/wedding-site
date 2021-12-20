@@ -100,6 +100,7 @@ photos=\
 "https://hosting.photobucket.com/images/i/dmobley0608/DSC03016.jpg",
 "https://hosting.photobucket.com/images/i/dmobley0608/DSC03030.jpg",
 
+
     ]
 # with open("photo_url.txt", 'r') as file:
 #     images = file.read()
