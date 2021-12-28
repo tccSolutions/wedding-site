@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="../static/css/rsvp.styles.css"/>
-        <link rel="icon" type="image/x-icon" href="../static/images/img.png"/>
-        <title>RSVP</title>
-    </head>
-    <body>
-        {% extends 'index.html' %}
-        {%block content%}
+{% extends 'index.html' %}
+{% block title %}RSVP - {%endblock%}
+{%block head%}
+    {{super()}}
+    <link rel="stylesheet" href="../static/css/rsvp.styles.css"/>
+{%endblock%}
+     
+    
+      
+{%block content%}
         <div id="rsvp_maker">
             <h4>Click Here To RSVP</h4>
         </div>
@@ -38,7 +37,6 @@
         </div>
 
         <script src="../static/javascript/rsvp.js"></script>
-    {%endblock%}
+{%endblock%}
 
-    </body>
-</html>
+    

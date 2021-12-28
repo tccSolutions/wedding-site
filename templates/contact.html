@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
+{% extends 'index.html' %}
+{%block title%}Contact Us - {%endblock%}
+{%block head%}
+    {{super()}}
+    <link rel="stylesheet" href="../static/css/contact.styles.css"/>
+{% endblock %}
+{%block content%}
+    <form action="{{ url_for('send') }}" class='contact-form' method="POST">
+         <h1>Leave Us A Message</h1>
+        {{form.csrf_token}}
+        {{form.name}}
+        {{form.email}}
+        {{form.message(rows='15')}}
+        <input type="submit"/>
+    </form>
 
-        <link href="../static/css/contact.styles.css" rel="stylesheet"/>
-        <link href="../static/images/img.png" rel="icon" type="image/x-icon"/>
-        <title>Contact Us</title>
-    </head>
-    <body>
-        {% extends 'index.html' %}
-        {%block content%}
-        <form action="{{ url_for('send') }}" class='contact-form' method="POST">
-            <h1>Leave Us A Message</h1>
-                {{form.csrf_token}}
-                {{form.name}}
-                {{form.email}}
-                {{form.message(rows='15')}}
-            <input type="submit"/>
-        </form>
+    <script src="../static/javascript/contact.js"></script>
+{%endblock%}
 
-        <script src="../static/javascript/contact.js"></script>
-    {%endblock%}
-
-    </body>
-</html>
+   

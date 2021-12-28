@@ -3,16 +3,20 @@
         text-shadow:5px 5px 5px black;
         height: 100%;
     }
+body{
+    background-image: url("../images/background.jpg");
+}
 
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 600px){
     html{
         height: 100%;
     }
     body{
         background-image: url("../images/index-mobile.jpg");
-        background-size: auto 100%;
+        background-size:cover;
         background-repeat: no-repeat;
         background-position: left top;
+        
     }
     .heading{
         color:white;

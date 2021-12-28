@@ -1,5 +1,5 @@
 body{
-    background-image: none;
+    background-image: none !important;
     background-color: antiquewhite;
 }
 .photo_container{
@@ -49,7 +49,10 @@ body{
 
 @media only screen and (max-width: 600px){
     body{
-        background-size: cover;
+        background-image:none !important;
+    }
+    .photo_overlay{
+        display:none;
     }
     .photo_container{
         justify-content: center;
