@@ -1,53 +1,46 @@
 body{
     background-image: none !important;
-    background-color: antiquewhite;
+    background-color: rgb(243, 241, 237);
+    text-align: center;
+}
+
+.courtesy{
+   display:flex;
+   justify-content: center;
+   align-items: baseline;
+}
+
+.courtesy a{    
+    margin-left: .5em ;
+    text-decoration: none;
+    color: inherit;    
+}
+
+.courtesy a{    
+    margin-left: .5em ;
+    text-decoration: none;
+    color: inherit;    
+}
+
+.courtesy a:hover{
+    text-decoration: underline;  
+    text-shadow: 5px 5px 5px black;  
+       
 }
 .photo_container{
     display:flex;
-    flex-wrap: wrap;
-    margin-top: 5em;
-    width:100%;
-    padding: 1.5em;
-    overflow-y: hidden;
-
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3em;
 }
 .photo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:10px;
-    width:23%;
-    border-radius: 2em;
-    overflow: hidden;
-
+   width: 30em;
+   margin-bottom: 1em;
+   
 }
 
-.photo img{
-    position: relative;
-    width:75%;
-    border-radius: .5em;
-    z-index: -1;
-
-}
-
-.photo:hover{
-   cursor: pointer;
-
-}
-.photo_overlay{
-    visibility: hidden;
-    background-color: rgba(3, 3, 3, 0.65);
-    width:75%;
-    margin: auto;
-    border-radius: .5em;
-    padding:1em 5em 5em 5em;
-}
-
-
-
-
-
-@media only screen and (max-width: 600px){
+/* @media only screen and (max-width: 600px){
     body{
         background-image:none !important;
     }
@@ -62,4 +55,4 @@ body{
     .photo{
         width: 15em;
     }
-}
+} */

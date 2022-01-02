@@ -8,6 +8,12 @@
  
 
 {% block content %}
+<h1>Engagement Photos</h1>
+<div class='courtesy'>
+  <h6>Courtesy of: </h6>
+  <a  href="https://wildcicadaimages.com/" target="_blank">Wild Cicada Images</a>
+</div>
+
 <div class="photo_container" >
     {% for photo in images %}
         <div class="photo">
@@ -15,32 +21,5 @@
         </div>
     {% endfor %}
 </div>
-
-
-<div id="carouselExampleControls" class="photo_overlay fixed-top top-25 carousel slide" data-interval="false">
-    <div>
-         <button id="photo_exit_btn" class="btn-close btn-close-white float-end mb-2 "></button>
-    </div>
-
-  <div class="carousel-inner text-center">
-       {% for photo in images %}
-        <div class="carousel-item text-center "  style="max-height: 50em;">
-           <img src={{photo}} class="img-thumbnail" alt="..." style="max-height: 49em; object-fit:contain;">
-        </div>
-    {% endfor %}
-  </div>
-  <button class="carousel-control-prev "
-         type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" data-interval="false">
-    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next  my-auto"
-          style="height: 35%" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" data-interval="false">
-    <span class="carousel-control-next-icon"   aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<script src="../static/javascript/photos.js"></script>
 {% endblock %}
 
