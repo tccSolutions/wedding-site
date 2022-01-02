@@ -1,25 +1,25 @@
-body{
+body{   
     background-image: url("../images/contact.jpg") !important;
 }
-.contact-form{
-    position: fixed;
-    top:25%;
-    right:25%;
-    padding: 1.5em;
+.container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30vw;
-    height: 45vh;
-    background-color: rgba(47, 79, 79, 0.432);
-    border-radius: .25em;
+    justify-content: center;
 }
+.contact-form{
+   display: flex;
+   flex-direction: column; 
+   background-color: rgba(0, 0, 0, 0.295);
+   padding: 2em;
+   margin-top: 2em;
+   border-radius: 1em; 
+}
+
 .contact-form h1{
     color: white;
     text-shadow: 5px 5px 5px black;
 }
 .contact-form input{
-    width:75%;
+    width:30em;
     margin-top: 1.5em;
     height: 50px;
     border-radius: .25rem;
@@ -27,7 +27,7 @@ body{
 }
 
 .contact-form textarea{
-    width:75%;
+    width:30em;
     margin-top: 1.5em;
     border-radius: .25rem;
     box-shadow: 5px 5px 5px black;
@@ -35,15 +35,3 @@ body{
 
 
 
-@media only screen and (max-width: 600px) {
-    body{
-        background-image:none !important;
-    }
-    .contact-form{
-        position: relative;
-        width:100%;
-        height: auto;
-        margin-top: 5%;
-        margin-left: 25%;
-    }
-}
