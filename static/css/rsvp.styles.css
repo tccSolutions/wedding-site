@@ -120,11 +120,13 @@
     background-color: rgba(255, 255, 255, 0.09);
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
     .rsvp_container{        
         margin-top: 20em;
     }
-    .rsvp_container_header h1
+    .rsvp_container_header h1{
+        font-size: 2em;
+    }
     
     #rsvp_maker{
         text-align: center;
