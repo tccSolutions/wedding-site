@@ -121,16 +121,10 @@
 }
 
 @media only screen and (max-width: 600px){
-    .rsvp_container_header{        
-        max-height:17%;
+    .rsvp_container{        
+        margin-top: 20em;
     }
-    .rsvp_container_header h1{
-        margin-top: .25em;
-       font-size: 2em;
-    }
-    .rsvp_container{
-        margin-top: 8em;
-    }
+    .rsvp_container_header h1
     
     #rsvp_maker{
         text-align: center;
