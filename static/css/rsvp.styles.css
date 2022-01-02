@@ -20,7 +20,7 @@
     padding:1.5em;
     z-index: 3;
 }
-.rsvp_container_form h1{
+.rsvp_container_form h2{
     color: #9d9b9b;
     font-size: 1em;
 }
@@ -39,17 +39,9 @@
 }
 
 .rsvp_container{
-    width: 100%;
-    position: sticky;
-    top:5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    text-align: center;
-    overflow: scroll;
-    margin-top: 10.5em;
-    height: 65vh;
+   display:flex;
+   flex-direction: column;
+   margin-top: 10em;
 }
 .rsvp_container::-webkit-scrollbar{
     display: none;
