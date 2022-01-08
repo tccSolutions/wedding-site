@@ -121,10 +121,15 @@
         width:95%;
         background: rgba(0, 0, 0, .95);
     }
-    .rsvp{
-        height: 10%;
-    }
+    
     .rsvp_container_header{
         background-color: rgba(157, 155, 155, 0.58);
     }
+}
+
+@media screen and (max-width:500px) {
+    .rsvp{
+        font-size: .75em;
+    }
+    
 }
