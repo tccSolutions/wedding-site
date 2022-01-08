@@ -67,15 +67,8 @@
     text-shadow: 2px 2px 2px black;
 }
 
-.rsvp{
-    display:flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    padding: 0;
-    width:100%
-}
-.rsvp p{
+
+.rsvp {
     font-size: 3em;
     letter-spacing: .1em;
     color:white;

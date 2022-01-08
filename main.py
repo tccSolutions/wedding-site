@@ -100,10 +100,14 @@ def contact():
 def rsvp():
     global guests
     guests = db.session.query(RSVP).all()
+    i=0
+    for guest in guests:
+        i += guest.num_guests
+    total_guests = len(guests) + i
     form = RSVPForm()
     if form.validate_on_submit():
         return redirect(url_for('rsvp'))
-    return render_template('rsvp.html', rsvps=guests, form=form)
+    return render_template('rsvp.html', rsvps=guests, form=form, total_guests=total_guests)
 
 
 if __name__ == "__main__":
