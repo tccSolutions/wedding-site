@@ -5,14 +5,22 @@
     <link rel="stylesheet" href="../static/css/contact.styles.css"/>
 {% endblock %}
 {%block content%}
-<div class="container">
-    <form action="{{ url_for('send') }}" class='contact-form' method="POST">
-        <h1>Leave Us A Message</h1>
+<div class="container-fluid row mt-5 justify-content-end ">    
+    <form class='container row p-2 rounded contact-form align-items-center' action="{{ url_for('send') }}" method="POST">
+        <h1>Leave Us A Message</h1>       
        {{form.csrf_token}}
-       {{form.name}}
-       {{form.email}}
-       {{form.message(rows='15')}}
-       <input type="submit"/>
+       <div class='col-12 mb-1'>
+        {{form.name}}
+       </div>
+       <div class='col-12 mb-1'>
+        {{form.email}}
+       </div>
+       <div class='col-12 mb-1'>
+        {{form.message(rows='15')}}
+       </div>
+       <div class='col'>
+        <input type="submit"/>
+       </div>     
    </form>
 </div>
    
