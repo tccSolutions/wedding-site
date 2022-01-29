@@ -27,32 +27,37 @@
 
         </div>
 
-        <div class="container bg-trans mt-5 rounded">
-            <div class='row rsvp justify-content-center text-center align-items-center mb-3 '>
-                <table class="text-start">
-                    <tr>
-                        <td class="text-end"> <h3>Ordained By:</h3></td>
-                        <td><h3>Pastor Rod Zwemke from <a href="https://crossroadsjc.com/">CROASSROADS CHURCH</a> </h3></td>                        
+        <div class="container-fluid bg-trans rounded">
+            <div class='row rsvp justify-content-center text-center align-items-center mb-3'>
+                <table class="w-75 text-start mx-auto mt-5 ">
+                    <tr>                        
+                        <td class="text-end "> <h4>Ordained By:</h4></td>
+                        <td><h4>Pastor Rod Zwemke from <a href="https://crossroadsjc.com/" target="_blank">CROASSROADS CHURCH</a> </h4></td>    
+                                        
                     </tr>
                     <tr>
-                        <td class="text-end"> <h3>Photography By:</h3></td>
-                        <td> <h3>Photography By: Leah with <a href="https://wildcicadaimages.com/about/">Wild Cicada Images</a></h3> </td>                        
+                        <td class="text-end"> <h4>Photography By:</h4></td>
+                        <td> <h4>Photography By: Leah with <a href="https://wildcicadaimages.com/about/" target="_blank">Wild Cicada Images</a></h4> </td>                        
                     </tr>
-                    <!-- <tr>
-                        <td class="text-end"> <h3>Entertainment By:</h3></td>
-                        <td><h3>The Music Guy with <a href="https://wildcicadaimages.com/about/">The Music Place</a></h3></td>                        
-                    </tr> -->
+                    <tr>
+                        <td class="text-end"> <h4>Entertainment By:</h4></td>
+                        <td><h4><a href="https://niceentertainment.com/?gclid=EAIaIQobChMImt2x9pDX9QIVUD6tBh01fwRtEAAYASAAEgKvd_D_BwE" target="_blank">Nice Entertainment</a></h4></td>                        
+                    </tr>
+                    <tr>
+                        <td class="text-end"> <h4>Catered By:</h4></td>
+                        <td><h4><a href="https://heavenlyhawgsbbq.com/" target="_blank">Heavenly Hawgs BBQ</a></h4></td>                        
+                    </tr>
                 </table>              
                
                
             </div>  
             <hr class="mx-auto mt-5">        
-            <div class='row rsvp justify-content-center text-center align-items-center '>
+            <div class=' container row rsvp justify-content-center text-center align-items-center mx-auto '>
                 <div class="col-6 "><h3>Guest Name</h3></div>
                 <div class="col-6 "><h3># of Guests</h3></div>
             </div>            
             {% for guest in rsvps %}
-            <div class="row rsvp justify-content-center text-center  align-items-center ">
+            <div class="container row rsvp justify-content-center text-center  align-items-center mx-auto ">
                 <h4 class="col-6  ">{{ guest }}</h4>
                 <h4 class='col-6 '>{{guest.num_guests}}</h4>
             </div>
