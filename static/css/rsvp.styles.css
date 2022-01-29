@@ -97,6 +97,19 @@
     background-color: rgba(255, 255, 255, 0.09);
 }
 
+.bg-trans{
+    background-color: rgba(32, 32, 32, 0.377);
+}
+
+a{
+    color: inherit;
+}
+hr{
+    border-top: 10px dotted white;
+    width: 75%;
+    
+}
+
 @media only screen and (max-width: 800px){
     .rsvp_container{        
         margin-top: 5em;
