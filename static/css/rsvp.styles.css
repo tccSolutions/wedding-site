@@ -109,7 +109,14 @@
 }
 
 a{
-    color: inherit;
+    color: inherit;    
+    transition:1s ease-in;
+}
+a:hover{
+    color: black;
+    text-shadow: 1px 1px 1px black;  
+    text-shadow: 2px 0px 15px white;
+    font-size: 1.25em;
 }
 hr{
     border-top: 10px dotted white;
