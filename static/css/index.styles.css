@@ -5,6 +5,7 @@
     }
 body{
     background-image: url("../images/background.jpg");
+    font-family: 'Hurricane', cursive;
 }
 
 @media only screen and (max-width: 600px){
