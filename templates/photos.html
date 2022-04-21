@@ -1,25 +1,39 @@
 {% extends 'index.html' %}
 {% block title%}Photos - {%endblock%}
 {%block head%}
-  {{super()}}
-  <link rel="stylesheet"  href="../static/css/photos.styles.css"/>
+{{super()}}
+<link rel="stylesheet" href="../static/css/photos.styles.css" />
 {%endblock%}
 
- 
+
 
 {% block content %}
+<!-- Image Modal -->
 <h1>Engagement Photos</h1>
-<div class='courtesy'>
+<div class='courtesy mt-3 position-absolute start-50 translate-middle'>
   <h6>Courtesy of: </h6>
-  <a  href="https://wildcicadaimages.com/" target="_blank">Wild Cicada Images</a>
+  <a href="https://wildcicadaimages.com/" target="_blank">Wild Cicada Images</a>
 </div>
 
-<div class="photo_container" >
-    {% for photo in images %}
-        <div class="photo">
-           <img src={{photo}} class="img-thumbnail" alt="...">
-        </div>
-    {% endfor %}
+<div class="photo_container">
+  {% for photo in images %}
+  <button class="photo btn" data-bs-toggle="modal" data-bs-target="#photo{{loop.index}}" style="height:25vh">
+    <img src={{photo}} class="img-thumbnail" alt="..." style="max-height:100%;width: auto;">
+  </button>
+
+  <!-- Modal -->
+<div class="modal fade container-fluid position-absolute top-50 start-50 translate-middle" id="photo{{loop.index}}" tabindex="-1" aria-labelledby="photo{{loop.index}}label" aria-hidden="true">
+  <div class="modal-dialog container-fluid" style=" max-height: 75vh; max-width: 95vw;">
+    <div class="modal-content container-fluid">
+      <div class="modal-header">       
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body border" >
+        <img src="{{photo}}" alt="{{photo}} not found" style="max-height: 75vh; max-width: 100%;"/>
+      </div>      
+    </div>
+  </div>
+</div>
+  {% endfor %}
 </div>
 {% endblock %}
-
