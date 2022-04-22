@@ -15,14 +15,14 @@
   <a href="https://wildcicadaimages.com/" target="_blank">Wild Cicada Images</a>
 </div>
 
-<div class="photo_container">
+<div class="photo_container" style="max-height: 80vh; overflow: scroll;">
   {% for photo in images %}
   <button class="photo btn" data-bs-toggle="modal" data-bs-target="#photo{{loop.index}}" style="height:25vh">
     <img src={{photo}} class="img-thumbnail" alt="..." style="max-height:100%;width: auto;">
   </button>
 
   <!-- Modal -->
-<div class="modal fade container-fluid position-absolute top-50 start-50 translate-middle" id="photo{{loop.index}}" tabindex="-1" aria-labelledby="photo{{loop.index}}label" aria-hidden="true">
+<div class="modal fade container-fluid align-self-center" id="photo{{loop.index}}" tabindex="-1" aria-labelledby="photo{{loop.index}}label" aria-hidden="true">
   <div class="modal-dialog container-fluid" style=" max-height: 75vh; max-width: 95vw;">
     <div class="modal-content container-fluid">
       <div class="modal-header">       
