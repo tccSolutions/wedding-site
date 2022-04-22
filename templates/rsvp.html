@@ -10,14 +10,15 @@
 {%block content%}
 
 <div class='' style=" background: rgba(0,0,0, 0.28);
-color:white; min-height: 90vh">
+color:white;">
     <div class="rsvp_container_header w-100  justify-content-center text-center">
-        <h1>RSVP LIST</h1>
+        <h1>RSVP LIST</h1>        
         <p>Please use the <a href="{{ url_for('contact') }}">Reach Out</a> link if you need to make changes.</p>
+        <h4 style="background-color: black;">Please RSVP By September 1st.</h4>
 
     </div>
 
-    <div class="container-fluid  rounded" >
+    <div class="container-fluid  rounded mt-5" >
         <div class='container rsvp justify-content-center text-center align-items-center mb-3'>
            
                 <div class="row">
@@ -46,22 +47,31 @@ color:white; min-height: 90vh">
            
            
         </div>  
-        <hr class="mx-auto mt-5" style="border-top:dotted 15px white; background-color: inherit;">        
-        <div class=' container row rsvp justify-content-center text-center align-items-center mx-auto border-bottom '>
-            <div class="col-md-4 col-6 "><h3>Guest Name</h3></div>
-            <div class="col-md-4  col-6"><h3># of Guests</h3></div>
-        </div>            
-        {% for guest in rsvps %}
-        <div class="container row rsvp justify-content-center text-center mx-auto border-bottom">
-            <h4 class="col-md-4 col-6 ">{{ guest }}</h4>
-            <h4 class='col-md-4 col-6 '>{{guest.num_guests}}</h4>
+        <!-- Guest List -->
+        <div class="container">
+            <hr class="mx-auto mt-5" style="border-top:dotted 15px white; background-color: inherit;">        
+            <div class=' container row rsvp justify-content-center text-center align-items-center mx-auto '>
+                <div class="col-lg-4 col-9 "><h3>Guest Name</h3></div>
+                <div class="col-lg-4  col-3"><h3>Guests</h3></div>
+                <hr class='mx-auto'style='border-top:solid 1px white; width:80%;'/>
+            </div>            
+            {% for guest in rsvps %}
+            <div class="container row rsvp justify-content-center text-center mx-auto ">
+                <h4  class="col-lg-4 col-9 ">{{ guest }}</h4>
+                <h4  class='col-lg-4 col-3 '>{{guest.num_guests}}</h4>
+                <hr style='border-top:solid 1px white; width:80%;'/>
+            </div>
+            {% endfor %}
+            
+            <div class='row rsvp justify-content-center text-center mt-4'>
+                <div class="col-md-12 text-center"><h3>Total Guests: {{total_guests}}</h3></div>               
+            </div> 
+            <hr class="mx-auto mt-0" style="border-top:dotted 15px white; background-color: inherit;">     
+
         </div>
-        {% endfor %}
-        <hr class="mx-auto mt-5" style="border-top:dotted 15px white; background-color: inherit;">    
-        <div class='row rsvp justify-content-center text-center mt-4'>
-            <div class="col-md-12 text-center"><h3>Total Guests: {{total_guests}}</h3></div>               
-        </div>   
+       
     </div>
+    <!-- Create RSVP -->
     <div id="rsvp_maker">
         <h5>Click Here To RSVP</h5>       
     </div>

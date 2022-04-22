@@ -1,6 +1,15 @@
 body{
     min-height: 100vh;
 }
+#guest_name {
+    font-size: 1.5em;
+    align-self:center;
+}
+#guest_count{
+    font-size: 1.5em;
+    align-self: center;
+}
+
 .rsvp_container_form{
     display: none;
     position:fixed;
