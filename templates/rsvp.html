@@ -77,18 +77,32 @@ color:white;">
     </div>
     <form class="rsvp_container_form" action="{{ url_for('add') }}" method="POST">
         <input id="rsvp_exit_btn" type="button" value="X"/>
+        <div id="rsvp_container">
         <h2>RSVP</h2>
         {{form.csrf_token}}
         {{form.name}}
         {{form.num_guests}}
-        <input type="submit" placeholder="Submit" class="rsvp_submit">
+        </div>
+        <div id="rsvp_loading" style="display:none;">
+            <img src="https://c.tenor.com/FBeNVFjn-EkAAAAC/ben-redblock-loading.gif" alt="" width="150px">
+        </div>
+        
+        <input id="rsvp_btn" type="submit" placeholder="Submit" class="rsvp_submit">
     </form>
    
 </div>
         
-       
-
+       <!-- jQuery -->
+       <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script src="../static/javascript/rsvp.js"></script>
+
+        <script>
+            $('#rsvp_btn').click(function(){
+                $('#rsvp_container').toggle()
+                $('#rsvp_btn').toggle()
+                $('#rsvp_loading').toggle()
+            })
+        </script>
 {%endblock%}
 
     

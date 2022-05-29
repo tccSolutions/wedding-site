@@ -18,6 +18,7 @@
   </head>
   
   <body>
+   
     <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark" >
       <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="../static/images/img.png" width="50px"></a>
@@ -51,6 +52,16 @@
         </div>
       </div>
     </nav>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       {% for message in messages %}
+       <div class="alert alert-dark alert-dismissible fade show text-center" role="alert" style="z-index:5000;position: absolute;top: 10px;width: 100%;">
+        <pre><strong>{{message}}</strong> </pre>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+       {% endfor %}
+    {% endif %}
+    {% endwith %}
 
   {% block content %}
   <div class="container-fluid">   

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, url_for, render_template, request, redirect
+from flask import Flask, url_for, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -16,7 +16,7 @@ app.config['MAIL_USERNAME'] = os.environ.get("EMAIL")
 app.config['MAIL_PASSWORD'] = os.environ.get("PASSWORD")
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.secret_key = "os.environ.get('SECRET_KEY')"
+app.secret_key = os.environ.get('SECRET_KEY')
 db = SQLAlchemy(app)
 pictures = photos
 
@@ -54,6 +54,7 @@ def index():
 @app.route("/add", methods=["GET", "POST"])
 def add():
     global guests
+    #add guest to data base
     if request.method == "POST":
         new_rsvp = RSVP(
             name=request.form["name"],
@@ -63,9 +64,19 @@ def add():
             db.session.add(new_rsvp)
             db.session.commit()
             guests = db.session.query(RSVP).all()
+           
         except:
             pass
-        print(guests)
+        #send notifaction email
+        try:
+            mail = Mail(app)
+            msg = Message("Message From Wedding Site", sender=f"Wedding Site: {request.form['name']} "
+                        , recipients=["dmobley0608@gmail.com", "tab2600@gmail.com"])
+            msg.body = f'{request.form["name"]} has submitted an RSVP with {request.form["num_guests"]} guests'
+            mail.send(msg)
+            flash(f"YAY {request.form['name']}! You have successfully RSVP'd to the wedding!\nAn Email Has Been Sent Notifying Taylor and Dwight of the RSVP!")
+        except:
+            pass        
         return redirect(url_for('rsvp'))
 
     return render_template('rsvp.html', rsvps=guests)
