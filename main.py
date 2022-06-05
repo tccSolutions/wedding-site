@@ -112,10 +112,10 @@ def rsvp():
     global guests
     guests = db.session.query(RSVP).all()
     employees = 4
-    i=0
+    total=0
     for guest in guests:
-        i += guest.num_guests
-    total_guests = len(guests) + i + employees
+        total += guest.num_guests
+    total_guests = total + employees
     form = RSVPForm()
     if form.validate_on_submit():
         return redirect(url_for('rsvp'))
