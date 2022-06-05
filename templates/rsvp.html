@@ -54,11 +54,13 @@ color:white;">
                 <hr class='mx-auto'style='border-top:solid 1px white; width:80%;'/>
             </div>            
             {% for guest in rsvps %}
+            {% if guest.num_guests > 0 %}
             <div class="container row rsvp justify-content-center text-center mx-auto ">
                 <h4  class="col-lg-4 col-9 ">{{ guest }}</h4>
                 <h4  class='col-lg-4 col-3 '>{{guest.num_guests}}</h4>
                 <hr style='border-top:solid 1px white; width:80%;'/>
             </div>
+            {%endif%}
             {% endfor %}
             
             <div class='row rsvp justify-content-center text-center mt-4'>
