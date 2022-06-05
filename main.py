@@ -110,7 +110,7 @@ def contact():
 @app.route("/rsvp")
 def rsvp():
     global guests
-    guests = db.session.query(RSVP).all().order_by(RSVP.guest_id)
+    guests = db.session.query(RSVP).order_by(RSVP.id).all()
     employees = 4
     total=0
     for guest in guests:
