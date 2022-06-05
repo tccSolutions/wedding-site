@@ -17,15 +17,24 @@
        </div>
        <div class='col-12 mb-1'>
         {{form.message(rows='15')}}
+        <input type='text' name='honey_pot' id='honey_pot'/>
        </div>
        <div class='col'>
-        <input type="submit"/>
+        <input id="submit_btn" type="submit"/>
        </div>     
    </form>
 </div>
    
-
-    <script src="../static/javascript/contact.js"></script>
+    <script>
+        $('#honey_pot').hide();        
+        $('#honey_pot').bind('input',function(){
+            console.log("changing")           
+            $('#submit_btn').remove();
+          
+            
+        })
+    </script>
+   
 {%endblock%}
 
    
