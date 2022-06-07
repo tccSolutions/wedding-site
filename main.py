@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, EmailField, TextAreaField
 from wtforms.validators import DataRequired
+from flask_recaptcha import ReCaptcha
 import psycopg2
 from static.data.image_data import photos
 
@@ -17,6 +18,10 @@ app.config['MAIL_PASSWORD'] = os.environ.get("PASSWORD")
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 app.secret_key = os.environ.get('SECRET_KEY')
+app.config['RECAPTCHA_SITE_KEY'] = os.environ.get("RECAPTCHA_SITE_KEY")
+app.config['RECAPTCHA_SECRET_KEY'] =  os.environ.get("RECAPTCHA_SECRET_KEY")
+
+recaptcha = ReCaptcha(app)
 db = SQLAlchemy(app)
 pictures = photos
 
@@ -85,12 +90,13 @@ def add():
 @app.route("/send", methods=["GET", "POST"])
 def send():
     if request.method == "POST":
-        mail = Mail(app)
-        msg = Message("Message From Wedding Site", sender=f"Wedding Site: {request.form['name']} "
-                      , recipients=["dmobley0608@gmail.com"])
-        msg.body = f'Email: {request.form["email"]}\n\n{request.form["message"]}'
-        mail.send(msg)
-        return redirect('contact')
+        if recaptcha.verify():
+            mail = Mail(app)
+            msg = Message("Message From Wedding Site", sender=f"Wedding Site: {request.form['name']} "
+                        , recipients=["dmobley0608@gmail.com"])
+            msg.body = f'Email: {request.form["email"]}\n\n{request.form["message"]}'
+            mail.send(msg)
+            return redirect('contact')
     return render_template('index.html')
 
 
@@ -103,7 +109,7 @@ def photos():
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
-        return redirect('index')
+       return redirect('index')
     return render_template('contact.html', form=form)
 
 
