@@ -73,9 +73,11 @@ color:white;">
         </div>
        
     </div>
-    <!-- Create RSVP -->
-    <div id="rsvp_maker">
-        <h5>Click Here To RSVP</h5>       
+    <!-- Create RSVP -->   
+    <div id="rsvp_maker"  data-bs-toggle="popover" title="Party Size 0 if not attending">            
+        <div >
+            <h5>Click Here To RSVP</h5> 
+        </div>                
     </div>
     <form class="rsvp_container_form" action="{{ url_for('add') }}" method="POST">
         <input id="rsvp_exit_btn" type="button" value="X"/>
@@ -83,7 +85,7 @@ color:white;">
         <h2>RSVP</h2>
         {{form.csrf_token}}
         {{form.name}}
-        {{form.num_guests(placeholder='PARTY SIZE')}}
+        {{form.num_guests(placeholder='PARTY SIZE (0 if not attending)')}}
         </div>
         <div id="rsvp_loading" style="display:none;">
             <img src="https://c.tenor.com/FBeNVFjn-EkAAAAC/ben-redblock-loading.gif" alt="" width="150px">
@@ -103,6 +105,8 @@ color:white;">
                 $('#rsvp_btn').toggle()
                 $('#rsvp_loading').toggle()
             })
+
+        
         </script>
 {%endblock%}
 
